@@ -17,7 +17,7 @@ A state-of-the-art Graph Transformer architecture that combines **meta-path lear
 
 ## 🏗️ Architecture Overview
 
-![Graph Transformer Architecture](graph_transformer_diagram.html)
+![Graph Transformer Architecture](graph_transformer_diagram.jpg)
 
 ### Core Components
 
