@@ -1,0 +1,158 @@
+<svg width="800" height="1000" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="800" height="1000" fill="white"/>
+  
+  <!-- Title -->
+  <text x="400" y="30" text-anchor="middle" font-size="20" font-weight="bold" font-family="Arial">Graph Transformer Architecture</text>
+  
+  <!-- Input Layer -->
+  <rect x="300" y="60" width="200" height="60" fill="lightblue" stroke="black" stroke-width="2"/>
+  <text x="400" y="85" text-anchor="middle" font-size="14" font-weight="bold">Input</text>
+  <text x="400" y="105" text-anchor="middle" font-size="12">Node Features [N, F]</text>
+  
+  <!-- Arrow -->
+  <polygon points="390,130 400,150 410,130" fill="black"/>
+  <line x1="400" y1="120" x2="400" y2="130" stroke="black" stroke-width="2"/>
+  
+  <!-- Meta-Path Learning -->
+  <rect x="250" y="160" width="300" height="80" fill="lightyellow" stroke="black" stroke-width="2"/>
+  <text x="400" y="185" text-anchor="middle" font-size="14" font-weight="bold">Meta-Path Learning</text>
+  <text x="400" y="205" text-anchor="middle" font-size="12">Learn edge type combinations</text>
+  <text x="400" y="220" text-anchor="middle" font-size="12">A_meta = softmax(W) × A_stack</text>
+  
+  <!-- Arrow -->
+  <polygon points="390,250 400,270 410,250" fill="black"/>
+  <line x1="400" y1="240" x2="400" y2="250" stroke="black" stroke-width="2"/>
+  
+  <!-- Positional Encoding -->
+  <rect x="250" y="280" width="300" height="60" fill="lightgreen" stroke="black" stroke-width="2"/>
+  <text x="400" y="305" text-anchor="middle" font-size="14" font-weight="bold">Laplacian Position Encoding</text>
+  <text x="400" y="325" text-anchor="middle" font-size="12">PE from graph Laplacian [N, PE_dim]</text>
+  
+  <!-- Arrow -->
+  <polygon points="390,350 400,370 410,350" fill="black"/>
+  <line x1="400" y1="340" x2="400" y2="350" stroke="black" stroke-width="2"/>
+  
+  <!-- Feature Concatenation -->
+  <rect x="250" y="380" width="300" height="60" fill="lightcoral" stroke="black" stroke-width="2"/>
+  <text x="400" y="405" text-anchor="middle" font-size="14" font-weight="bold">Feature Concatenation</text>
+  <text x="400" y="425" text-anchor="middle" font-size="12">concat(node_features, PE) → Linear</text>
+  
+  <!-- Arrow -->
+  <polygon points="390,450 400,470 410,450" fill="black"/>
+  <line x1="400" y1="440" x2="400" y2="450" stroke="black" stroke-width="2"/>
+  
+  <!-- Parallel Processing -->
+  <text x="400" y="490" text-anchor="middle" font-size="14" font-weight="bold">Parallel Meta-Path Processing</text>
+  
+  <!-- Channel 1 -->
+  <rect x="100" y="510" width="120" height="180" fill="lavender" stroke="black" stroke-width="2"/>
+  <text x="160" y="530" text-anchor="middle" font-size="12" font-weight="bold">Channel 1</text>
+  
+  <!-- Transformer layers in channel 1 -->
+  <rect x="110" y="540" width="100" height="30" fill="white" stroke="gray"/>
+  <text x="160" y="560" text-anchor="middle" font-size="10">Transformer</text>
+  
+  <rect x="110" y="580" width="100" height="30" fill="white" stroke="gray"/>
+  <text x="160" y="600" text-anchor="middle" font-size="10">Transformer</text>
+  
+  <rect x="110" y="620" width="100" height="30" fill="white" stroke="gray"/>
+  <text x="160" y="640" text-anchor="middle" font-size="10">...</text>
+  
+  <rect x="110" y="660" width="100" height="20" fill="white" stroke="gray"/>
+  <text x="160" y="675" text-anchor="middle" font-size="10">(6 layers)</text>
+  
+  <!-- Channel 2 -->
+  <rect x="240" y="510" width="120" height="180" fill="lavender" stroke="black" stroke-width="2"/>
+  <text x="300" y="530" text-anchor="middle" font-size="12" font-weight="bold">Channel 2</text>
+  
+  <rect x="250" y="540" width="100" height="30" fill="white" stroke="gray"/>
+  <text x="300" y="560" text-anchor="middle" font-size="10">Transformer</text>
+  
+  <rect x="250" y="580" width="100" height="30" fill="white" stroke="gray"/>
+  <text x="300" y="600" text-anchor="middle" font-size="10">Transformer</text>
+  
+  <rect x="250" y="620" width="100" height="30" fill="white" stroke="gray"/>
+  <text x="300" y="640" text-anchor="middle" font-size="10">...</text>
+  
+  <rect x="250" y="660" width="100" height="20" fill="white" stroke="gray"/>
+  <text x="300" y="675" text-anchor="middle" font-size="10">(6 layers)</text>
+  
+  <!-- Channel ... -->
+  <rect x="380" y="510" width="120" height="180" fill="lavender" stroke="black" stroke-width="2"/>
+  <text x="440" y="530" text-anchor="middle" font-size="12" font-weight="bold">...</text>
+  
+  <rect x="390" y="540" width="100" height="30" fill="white" stroke="gray"/>
+  <text x="440" y="560" text-anchor="middle" font-size="10">Transformer</text>
+  
+  <rect x="390" y="580" width="100" height="30" fill="white" stroke="gray"/>
+  <text x="440" y="600" text-anchor="middle" font-size="10">Transformer</text>
+  
+  <rect x="390" y="620" width="100" height="30" fill="white" stroke="gray"/>
+  <text x="440" y="640" text-anchor="middle" font-size="10">...</text>
+  
+  <rect x="390" y="660" width="100" height="20" fill="white" stroke="gray"/>
+  <text x="440" y="675" text-anchor="middle" font-size="10">(6 layers)</text>
+  
+  <!-- Channel C -->
+  <rect x="520" y="510" width="120" height="180" fill="lavender" stroke="black" stroke-width="2"/>
+  <text x="580" y="530" text-anchor="middle" font-size="12" font-weight="bold">Channel C</text>
+  
+  <rect x="530" y="540" width="100" height="30" fill="white" stroke="gray"/>
+  <text x="580" y="560" text-anchor="middle" font-size="10">Transformer</text>
+  
+  <rect x="530" y="580" width="100" height="30" fill="white" stroke="gray"/>
+  <text x="580" y="600" text-anchor="middle" font-size="10">Transformer</text>
+  
+  <rect x="530" y="620" width="100" height="30" fill="white" stroke="gray"/>
+  <text x="580" y="640" text-anchor="middle" font-size="10">...</text>
+  
+  <rect x="530" y="660" width="100" height="20" fill="white" stroke="gray"/>
+  <text x="580" y="675" text-anchor="middle" font-size="10">(6 layers)</text>
+  
+  <!-- Arrows from channels -->
+  <polygon points="155,700 160,720 165,700" fill="black"/>
+  <line x1="160" y1="690" x2="160" y2="700" stroke="black" stroke-width="1"/>
+  
+  <polygon points="295,700 300,720 305,700" fill="black"/>
+  <line x1="300" y1="690" x2="300" y2="700" stroke="black" stroke-width="1"/>
+  
+  <polygon points="435,700 440,720 445,700" fill="black"/>
+  <line x1="440" y1="690" x2="440" y2="700" stroke="black" stroke-width="1"/>
+  
+  <polygon points="575,700 580,720 585,700" fill="black"/>
+  <line x1="580" y1="690" x2="580" y2="700" stroke="black" stroke-width="1"/>
+  
+  <!-- Concatenation -->
+  <rect x="200" y="730" width="400" height="60" fill="lightpink" stroke="black" stroke-width="2"/>
+  <text x="400" y="755" text-anchor="middle" font-size="14" font-weight="bold">Concatenate Channels</text>
+  <text x="400" y="775" text-anchor="middle" font-size="12">concat(ch1, ch2, ..., chC) [N, H×C]</text>
+  
+  <!-- Arrow -->
+  <polygon points="390,800 400,820 410,800" fill="black"/>
+  <line x1="400" y1="790" x2="400" y2="800" stroke="black" stroke-width="2"/>
+  
+  <!-- Final MLP -->
+  <rect x="250" y="830" width="300" height="80" fill="lightsalmon" stroke="black" stroke-width="2"/>
+  <text x="400" y="855" text-anchor="middle" font-size="14" font-weight="bold">Final MLP</text>
+  <text x="400" y="875" text-anchor="middle" font-size="12">Linear → ReLU → Dropout</text>
+  <text x="400" y="895" text-anchor="middle" font-size="12">→ Linear → [N, output_features]</text>
+  
+  <!-- Arrow -->
+  <polygon points="390,920 400,940 410,920" fill="black"/>
+  <line x1="400" y1="910" x2="400" y2="920" stroke="black" stroke-width="2"/>
+  
+  <!-- Output -->
+  <rect x="300" y="950" width="200" height="40" fill="lightsteelblue" stroke="black" stroke-width="2"/>
+  <text x="400" y="975" text-anchor="middle" font-size="14" font-weight="bold">Output Predictions</text>
+  
+  <!-- Side note for transformer layer detail -->
+  <rect x="50" y="200" width="180" height="120" fill="whitesmoke" stroke="gray" stroke-width="1" stroke-dasharray="5,5"/>
+  <text x="140" y="220" text-anchor="middle" font-size="12" font-weight="bold">Transformer Layer:</text>
+  <text x="60" y="240" font-size="10">• Multi-Head Attention</text>
+  <text x="60" y="255" font-size="10">• Residual + LayerNorm</text>
+  <text x="60" y="270" font-size="10">• Feed Forward (4×H)</text>
+  <text x="60" y="285" font-size="10">• Residual + LayerNorm</text>
+  <text x="60" y="300" font-size="10">• Dropout</text>
+  
+</svg>
