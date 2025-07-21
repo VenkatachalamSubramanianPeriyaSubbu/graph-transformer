@@ -148,8 +148,6 @@ print(f"Positional encoding shape: {pos_enc.shape}")  # [1000, 64]
 ```
 
 ## Citation
-
-If you use this Graph Transformer in your research, please cite:
 This work builds upon the foundational Graph Transformer architecture:
 
 ```bibtex
