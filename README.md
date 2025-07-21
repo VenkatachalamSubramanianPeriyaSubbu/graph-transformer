@@ -1,4 +1,4 @@
-# 🚀 Graph Transformer with Meta-Path Learning
+# Graph Transformer with Meta-Path Learning
 
 <!-- [![Python](https://img.shields.io/badge/Python-3.7%2B-blue)](https://www.python.org/downloads/)
 [![PyTorch](https://img.shields.io/badge/PyTorch-1.9%2B-red)](https://pytorch.org/)
@@ -15,7 +15,7 @@ A state-of-the-art Graph Transformer architecture that combines **meta-path lear
 - **Scalable Architecture**: Efficient attention mechanisms with configurable depth and width
 - **End-to-End Learning**: Differentiable meta-path discovery integrated with transformer layers
 
-## 🏗️ Architecture Overview
+## Architecture Overview
 
 ![Graph Transformer Architecture](graph_transformer_diagram.jpg)
 
@@ -36,7 +36,7 @@ A state-of-the-art Graph Transformer architecture that combines **meta-path lear
    Output = MLP(concat(Channel_1, Channel_2, ..., Channel_C))
    ```
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Installation
 
@@ -80,7 +80,7 @@ model_heavy = GraphTransformer(
 )
 ```
 
-## 🧠 How It Works
+## How It Works
 
 ### 1. Meta-Path Discovery
 The model learns to combine different edge types using learnable weights:
@@ -117,7 +117,7 @@ Perfect for domains with rich relational structure:
 - **Recommendation Systems**: Item classification with multi-modal relationships
 - **Academic Networks**: Paper classification using citation, authorship, and topic links
 
-## 🛠️ Advanced Usage
+## Advanced Usage
 
 ### Custom Meta-Path Learning
 
